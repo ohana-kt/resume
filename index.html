@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>资深UI/视觉设计师 · 十余年跨端设计专家 · AI效能先锋</title>
+    <!-- 使用优雅字体与现代化设计语言 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 10% 20%, #f1f4fa, #e9eef5);
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.4;
+            color: #1a2634;
+            padding: 40px 24px;
+        }
+
+        /* 主容器 — 高级杂志感卡片 */
+        .resume-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 48px;
+            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.25), 0 8px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* 网格布局：左侧深色区块（个人品牌） + 右侧主内容 */
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 34% 66%;
+        }
+
+        /* ========= 左侧：设计者身份 + 亮点 ========= */
+        .sidebar {
+            background: #10181f;
+            color: #eef3fc;
+            padding: 2.5rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .designer-header {
+            text-align: left;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 1.5rem;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #FFFFFF, #B0D4FF);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.75rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            padding: 0.3rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            margin-bottom: 1rem;
+        }
+
+        .title-xl {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #bfd9ff;
+            margin-top: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: #cddfed;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            width: 28px;
+            text-align: center;
+        }
+
+        /* 左侧区块通用样式 */
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+            color: #9bb8e0;
+            border-left: 3px solid #4f9eff;
+            padding-left: 12px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 30px;
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #eef3fc;
+            transition: 0.2s;
+            border: 0.5px solid rgba(255,255,255,0.2);
+        }
+
+        .skill-tag.ai {
+            background: rgba(79, 158, 255, 0.2);
+            border-color: #4f9eff;
+            color: #cbe4fe;
+        }
+
+        .highlight-text {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #cbddee;
+        }
+
+        .tool-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .tool-item {
+            background: #1e2a34;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+        /* ========= 右侧：设计经历 + 作品亮点 ========= */
+        .main-content {
+            padding: 2.5rem 2.5rem 2.5rem 2rem;
+            background: white;
+        }
+
+        .right-section {
+            margin-bottom: 2rem;
+        }
+
+        .right-title {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #1e3a5f;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #eef2fa;
+            padding-bottom: 8px;
+        }
+
+        .right-title span {
+            background: #eef3ff;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+        }
+
+        /* 工作经历卡片 */
+        .exp-item {
+            margin-bottom: 1.8rem;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-role {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #0f2b3b;
+        }
+
+        .exp-date {
+            font-size: 0.75rem;
+            color: #5b6f86;
+            font-weight: 500;
+        }
+
+        .exp-company {
+            font-weight: 600;
+            color: #3a6ea5;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-desc {
+            font-size: 0.85rem;
+            color: #2c3e4e;
+            line-height: 1.5;
+            margin-top: 6px;
+            padding-left: 6px;
+            border-left: 3px solid #cbdde9;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        .project-card {
+            background: #f9fbfe;
+            border-radius: 24px;
+            padding: 1rem 1.2rem;
+            transition: all 0.2s ease;
+            border: 1px solid #eef2f8;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.1);
+            border-color: #cddef5;
+        }
+
+        .project-name {
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-desc {
+            font-size: 0.75rem;
+            color: #4a627a;
+            line-height: 1.45;
+        }
+
+        .ai-badge {
+            background: #e9f0fe;
+            color: #1f6392;
+            font-size: 0.65rem;
+            border-radius: 40px;
+            padding: 2px 8px;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        /* 多端设计标识 */
+        .platform-icons {
+            display: flex;
+            gap: 12px;
+            margin: 16px 0 8px;
+        }
+        .platform {
+            background: #eff3f9;
+            border-radius: 40px;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 880px) {
+            .resume-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                padding: 2rem 1.8rem;
+            }
+            .main-content {
+                padding: 2rem;
+            }
+            body {
+                padding: 20px 16px;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name {
+                font-size: 2rem;
+            }
+            .exp-header {
+                flex-direction: column;
+                gap: 4px;
+            }
+            .main-content {
+                padding: 1.5rem;
+            }
+        }
+
+        /* 装饰细节和动画 */
+        .video-showcase {
+            margin-top: 1.5rem;
+            background: #f5f8ff;
+            border-radius: 32px;
+            padding: 0.8rem;
+            border: 1px solid #e6edf6;
+        }
+
+        .video-caption {
+            font-size: 0.7rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            color: #4f7092;
+        }
+
+        .glow-text {
+            background: linear-gradient(120deg, #1f2e3f, #2c5282);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+<div class="resume-container">
+    <div class="resume-grid">
+        <!-- 左侧：品牌色区域，彰显资深设计力量 -->
+        <aside class="sidebar">
+            <div class="designer-header">
+                <div class="badge">✦ 设计领袖 · AI 设计先锋 ✦</div>
+                <div class="name">郭 华荣<br>Hua Rong</div>
+                <div class="title-xl">资深UI/视觉设计师 · 设计系统专家<br>13年跨端设计经验 · 生成式AI设计提效开拓者</div>
+                <div class="contact-info">
+                    <div class="contact-item"><span class="contact-icon">📱</span> +86 136 0000 8899</div>
+                    <div class="contact-item"><span class="contact-icon">✉️</span> wei.design@creativ.ai</div>
+                    <div class="contact-item"><span class="contact-icon">🌐</span> weichen-portfolio.cc</div>
+                    <div class="contact-item"><span class="contact-icon">📍</span> 上海 / 深圳 · 全球远程</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title">设计专长</div>
+                <div class="skill-tags">
+                    <span class="skill-tag">UI/UX 策略</span>
+                    <span class="skill-tag">设计系统</span>
+                    <span class="skill-tag">跨端体验</span>
+                    <span class="skill-tag">视觉语言</span>
+                    <span class="skill-tag ai">AI 工作流</span>
+                    <span class="skill-tag">交互原型</span>
+                    <span class="skill-tag">品牌识别</span>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title">AI 工具链 · 效能引擎</div>
+                <div class="tool-list">
+                    <span class="tool-item">Midjourney V7</span>
+                    <span class="tool-item">Runway Gen-3</span>
+                    <span class="tool-item">Figma AI</span>
+                    <span class="tool-item">Uizard</span>
+                    <span class="tool-item">Copilot</span>
+                    <span class="tool-item">DALL·E 3</span>
+                    <span class="tool-item">Gamma AI</span>
+                </div>
+                <div class="highlight-text" style="margin-top: 14px;">
+                    ⚡ 利用AI将设计产出效率提升65% · 从概念到高保真原型缩短70%时间 · 训练定制化设计模型辅助创意发散
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title">核心工具</div>
+                <div class="tool-list">
+                    <span class="tool-item">Figma / XD</span>
+                    <span class="tool-item">Sketch / Framer</span>
+                    <span class="tool-item">PS / AI / Affinity</span>
+                    <span class="tool-item">ProtoPie / Principle</span>
+                    <span class="tool-item">Webflow / 动效设计</span>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title">荣誉 & 演讲</div>
+                <div class="highlight-text">
+                    🏆 2024 国际设计大奖 (IDEA) 铜奖<br>
+                    🎤 2025 全球AI设计峰会 特邀讲者<br>
+                    📖 站酷推荐设计师 · 十年人气设计师<br>
+                    ✨ 设计作品收录《亚太设计年鉴》多届
+                </div>
+            </div>
+        </aside>
+
+        <!-- 右侧：资深履历，项目亮点和视频展示 -->
+        <main class="main-content">
+            <!-- 简介 -->
+            <div class="right-section">
+                <div class="right-title">💎 设计哲学 <span>AI-Enhanced Design</span></div>
+                <p style="font-size: 0.9rem; line-height: 1.5; color: #2c445c;">拥有13年全链路设计经验，主导过亿级用户产品的视觉革新。擅长从0到1构建跨端设计系统，精通移动端、Web端、车载HMI及智能硬件界面。近年专注于AI辅助设计工作流，通过生成式AI与自动化工具大幅提升创意产出效率，引领团队实现设计资产智能化管理。</p>
+            </div>
+
+            <!-- 工作经验 -->
+            <div class="right-section">
+                <div class="right-title">🏢 设计领导力 · 十余年深耕</div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-role">设计总监 / AI创新负责人</div>
+                        <div class="exp-date">2021 — 至今</div>
+                    </div>
+                    <div class="exp-company">字节跳动 · 体验设计中心（上海）</div>
+                    <div class="exp-desc">管理20+人设计团队，负责抖音海外版及多款创新产品UI视觉。构建全平台设计语言“Liquid Core”，落地AI辅助设计系统，推动Figma插件自动化生成组件库，设计交付效率提升40%。引入Midjourney+ ComfyUI 工作流，加速运营与活动视觉产出，季度创意成本降低30%。</div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-role">资深UI/UX专家 · 跨端设计负责人</div>
+                        <div class="exp-date">2016 — 2021</div>
+                    </div>
+                    <div class="exp-company">蚂蚁集团 · 体验技术部</div>
+                    <div class="exp-desc">主导支付宝「市民中心」及「蚂蚁财富」多端改版，覆盖移动、平板及智慧屏。打造响应式设计规范，支持无障碍设计，DAU提升26%。同时负责设计团队AI工具内训，孵化智能配色与布局建议插件。</div>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-role">视觉设计主管 / 全链路设计</div>
+                        <div class="exp-date">2012 — 2016</div>
+                    </div>
+                    <div class="exp-company"> frog 设计咨询 · 上海工作室</div>
+                    <div class="exp-desc">为全球500强客户提供跨端体验设计解决方案，涵盖零售、IoT、汽车座舱等领域。主导多个从概念到落地的完整项目，荣获红点/iF设计奖，奠定扎实的设计研究与视觉叙事能力。</div>
+                </div>
+            </div>
+
+            <!-- AI提效与设计成就 -->
+            <div class="right-section">
+                <div class="right-title">✨ AI赋能 · 设计提效案例</div>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-name">🤖 Figma AI 组件智能生成器</div>
+                        <div class="project-desc">利用GPT-4 API + Figma插件生态，将设计意图转化为组件库变体，自动生成暗黑模式与多端适配变体，团队复用率达85%。</div>
+                        <div class="ai-badge">AI工作流 | 效率提升55%</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-name">🎨 生成式UI探索 · 品牌视觉延展</div>
+                        <div class="project-desc">运用Midjourney + Stable Diffusion +  ControlNet构建品牌插画系统，一键输出多风格视觉，降低外包成本，强化品牌一致性。</div>
+                        <div class="ai-badge">AIGC视觉 | 3天产出300+素材</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 多端设计代表性项目 -->
+            <div class="right-section">
+                <div class="right-title">📱 多端设计代表作 <span>Mobile·Web·车载·智能硬件</span></div>
+                <div class="platform-icons">
+                    <div class="platform">📱 iOS/Android App</div>
+                    <div class="platform">💻 响应式Web</div>
+                    <div class="platform">🚗 车载HMI</div>
+                    <div class="platform">⌚️ 智能手表OS</div>
+                    <div class="platform">📺 TV OS</div>
+                </div>
+                <div class="project-grid" style="margin-top: 12px;">
+                    <div class="project-card">
+                        <div class="project-name">「智行未来」智能座舱设计系统</div>
+                        <div class="project-desc">为头部新能源车企打造跨屏交互语言，涵盖仪表盘、中控、后排娱乐。结合AI语音动效，提升驾驶安全性与沉浸体验，获2024 德国iF设计奖。</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-name">全球电商「Fusion」多端设计重塑</div>
+                        <div class="project-desc">覆盖12个地区市场的移动端/PC/平板统一设计，引入自适应布局及组件库，设计一致性提高90%，用户留存率增长18%。</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 视频展示区：加载本地视频，凸显设计动态演示（原要求支持本地视频播放） -->
+            <div class="video-showcase">
+                <div style="font-weight: 600; font-size: 0.85rem; margin-bottom: 8px; display: flex; gap: 8px; align-items: center;">
+                    🎬 设计高光时刻 · AI生成式界面预览 <span style="font-size: 0.7rem; background:#eef0f5; padding:2px 8px; border-radius:20px;">demo.mp4</span>
+                </div>
+                <video controls playsinline preload="metadata" style="width: 100%; border-radius: 28px; display: block; box-shadow: 0 8px 20px rgba(0,0,0,0.08);" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='100%25' height='100%25' fill='%231e293b'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2394a3b8' font-size='12'%3E🎨 设计演示视频%3C/text%3E%3C/svg%3E">
+                    <source src="demo.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放，可查看下方设计案例展示。
+                </video>
+                <div class="video-caption">▲ 概念视频：AI辅助设计工作流片段（请将本地视频命名为 xxx.mp4 并置于同目录下，展示动态设计能力）</div>
+            </div>
+
+            <!-- 设计影响力与软实力 -->
+            <div class="right-section" style="margin-bottom: 0;">
+                <div class="right-title">📢 行业影响 & 设计赋能</div>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;">
+                    <div style="flex:1; min-width: 150px;"><span style="font-weight:800;">📚 设计刊物撰稿</span><br><span style="font-size:0.75rem;">《AI时代的设计范式》专栏作者，累计10w+阅读</span></div>
+                    <div style="flex:1; min-width: 150px;"><span style="font-weight:800;">🎙️ 工作坊/内训</span><br><span style="font-size:0.75rem;">举办「AI驱动设计进阶」线下课，覆盖300+设计师</span></div>
+                    <div style="flex:1; min-width: 150px;"><span style="font-weight:800;">🏅 设计评审委员</span><br><span style="font-size:0.75rem;">IXDC 国际体验设计大会 演讲嘉宾及评审</span></div>
+                </div>
+            </div>
+
+            <!-- 底部更新标识 -->
+            <div style="margin-top: 2rem; font-size: 0.65rem; text-align: right; border-top: 1px solid #ecf3fa; padding-top: 1rem; color:#7a8d9f;">
+                🌟 持续拥抱 AI 工具 | 跨端设计经验13年 | 作品集可联系获取完整版
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- 轻量脚本：优雅处理视频加载提示 -->
+<script>
+    (function() {
+        const videoEl = document.querySelector('.video-showcase video');
+        if (videoEl) {
+            videoEl.addEventListener('error', function(e) {
+                const parentDiv = document.querySelector('.video-showcase');
+                if (parentDiv && !parentDiv.querySelector('.video-alt-tip')) {
+                    const tip = document.createElement('div');
+                    tip.className = 'video-alt-tip';
+                    tip.style.cssText = 'background:#fff3e0; border-radius:20px; padding:8px 12px; margin-top:12px; font-size:0.7rem; color:#c26b00; text-align:center;';
+                    tip.innerHTML = '💡 提示：未检测到本地视频文件 "xxx.mp4"，请将您的设计作品视频放置于相同目录下，即可展示动态视觉案例。当前简历核心信息已完整呈现。';
+                    parentDiv.appendChild(tip);
+                }
+            });
+        }
+    })();
+</script>
+</body>
+</html>
